@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://h07no5c81oep"]
+
+[node name="PotionBase" type="Area2D"]

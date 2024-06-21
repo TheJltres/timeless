@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlgdypsbphnnm"]
+
+[ext_resource type="PackedScene" uid="uid://dxdhaehudr5xh" path="res://scenes/pause/pause_main_menu.tscn" id="2_kli6a"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_25ry3"]
+distance = -81.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j6k3p"]
+normal = Vector2(-1, 0)
+distance = -144.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5jeup"]
+normal = Vector2(0, 1)
+distance = -81.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_18go1"]
+normal = Vector2(1, 0)
+distance = -144.0
+
+[node name="MapCommon" type="Node2D"]
+process_mode = 3
+z_index = 100
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2DBottom" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_25ry3")
+
+[node name="CollisionShape2D2Right" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_j6k3p")
+
+[node name="CollisionShape2D3Top" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_5jeup")
+
+[node name="CollisionShape2D4Left" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_18go1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="PauseMainMenu" parent="." instance=ExtResource("2_kli6a")]
+visible = false
