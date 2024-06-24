@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbhts5m4rdlh"]
+[gd_scene load_steps=12 format=3 uid="uid://dbhts5m4rdlh"]
 
 [ext_resource type="Texture2D" uid="uid://y2fsb3n1gfgb" path="res://assets/maps/map0.jpg" id="1_f2jw7"]
 [ext_resource type="Script" path="res://scenes/maps/map_1.gd" id="1_plsrx"]
@@ -7,16 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://crgatbgndwyo6" path="res://assets/characters/enemy/enemy.tscn" id="4_pej3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1nqa"]
-size = Vector2(24, 24)
+size = Vector2(23, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbrpk"]
+size = Vector2(40, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2n7sn"]
+size = Vector2(54, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahosb"]
-size = Vector2(20, 61)
+size = Vector2(20, 146)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcygg"]
-size = Vector2(100, 20)
+size = Vector2(252, 11.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq31h"]
-size = Vector2(117, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2avm"]
+size = Vector2(248, 20)
 
 [node name="Map_1" type="Node2D"]
 script = ExtResource("1_plsrx")
@@ -39,24 +45,46 @@ position = Vector2(67, 35)
 [node name="Enemy2" parent="Enemies" instance=ExtResource("4_pej3v")]
 position = Vector2(62, -26)
 
-[node name="DoorRight" type="Area2D" parent="." groups=["Door"]]
+[node name="Door_Right" type="Area2D" parent="." groups=["Door"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorRight"]
-position = Vector2(121, 2)
+[node name="Door" type="CollisionShape2D" parent="Door_Right"]
+position = Vector2(121.5, 4)
 shape = SubResource("RectangleShape2D_k1nqa")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Door_Left" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-123, -38.5)
+[node name="Door" type="CollisionShape2D" parent="Door_Left"]
+position = Vector2(-121, 4)
+shape = SubResource("RectangleShape2D_k1nqa")
+
+[node name="Door_Up" type="Area2D" parent="."]
+
+[node name="Door" type="CollisionShape2D" parent="Door_Up"]
+position = Vector2(0, -53)
+shape = SubResource("RectangleShape2D_cbrpk")
+
+[node name="Door_Down" type="Area2D" parent="."]
+
+[node name="Door" type="CollisionShape2D" parent="Door_Down"]
+position = Vector2(0, 71)
+shape = SubResource("RectangleShape2D_2n7sn")
+
+[node name="Walls" type="CharacterBody2D" parent="."]
+
+[node name="Wall_Left" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-123, 4)
 shape = SubResource("RectangleShape2D_ahosb")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-67, -58)
+[node name="Wall_Right" type="CollisionShape2D" parent="Walls"]
+position = Vector2(123, 5)
+shape = SubResource("RectangleShape2D_ahosb")
+
+[node name="Wall_Down" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 72.5)
 shape = SubResource("RectangleShape2D_lcygg")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(73.5, -58)
-shape = SubResource("RectangleShape2D_oq31h")
+[node name="Wall_Up" type="CollisionShape2D" parent="Walls"]
+position = Vector2(7, -58)
+shape = SubResource("RectangleShape2D_o2avm")
 
-[connection signal="body_entered" from="DoorRight" to="." method="_on_door_right_body_entered"]
+[connection signal="body_entered" from="Door_Right" to="." method="_on_door_right_body_entered"]
