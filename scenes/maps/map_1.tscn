@@ -47,25 +47,25 @@ position = Vector2(62, -26)
 
 [node name="Door_Right" type="Area2D" parent="." groups=["Door"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorRight"]
+[node name="DoorRight" type="CollisionShape2D" parent="Door_Right"]
 position = Vector2(121, 3)
 shape = SubResource("RectangleShape2D_k1nqa")
 
 [node name="Door_Left" type="Area2D" parent="."]
 
-[node name="Door" type="CollisionShape2D" parent="Door_Left"]
+[node name="DoorLeft" type="CollisionShape2D" parent="Door_Left"]
 position = Vector2(-121, 4)
 shape = SubResource("RectangleShape2D_k1nqa")
 
 [node name="Door_Up" type="Area2D" parent="."]
 
-[node name="Door" type="CollisionShape2D" parent="Door_Up"]
+[node name="DoorUp" type="CollisionShape2D" parent="Door_Up"]
 position = Vector2(0, -53)
 shape = SubResource("RectangleShape2D_cbrpk")
 
 [node name="Door_Down" type="Area2D" parent="."]
 
-[node name="Door" type="CollisionShape2D" parent="Door_Down"]
+[node name="DoorDown" type="CollisionShape2D" parent="Door_Down"]
 position = Vector2(0, 71)
 shape = SubResource("RectangleShape2D_2n7sn")
 
