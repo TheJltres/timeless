@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://crgatbgndwyo6" path="res://assets/characters/enemy/enemy.tscn" id="4_pej3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1nqa"]
-size = Vector2(24, 24)
+size = Vector2(24, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahosb"]
 size = Vector2(20, 61)
@@ -42,7 +42,7 @@ position = Vector2(62, -26)
 [node name="DoorRight" type="Area2D" parent="." groups=["Door"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorRight"]
-position = Vector2(121, 2)
+position = Vector2(121, 3)
 shape = SubResource("RectangleShape2D_k1nqa")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
