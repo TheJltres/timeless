@@ -1,19 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbhts5m4rdlh"]
+[gd_scene load_steps=14 format=3 uid="uid://3f4xcb37cta7"]
 
-[ext_resource type="Texture2D" uid="uid://y2fsb3n1gfgb" path="res://assets/maps/map0.jpg" id="1_f2jw7"]
-[ext_resource type="Script" path="res://scenes/maps/map_1.gd" id="1_plsrx"]
+[ext_resource type="Script" path="res://scenes/maps/map_1.gd" id="1_mc45e"]
+[ext_resource type="Texture2D" uid="uid://cl82y66urbpao" path="res://assets/maps/map1_ph.jpg" id="2_ht5r3"]
 [ext_resource type="PackedScene" uid="uid://dlgdypsbphnnm" path="res://scenes/maps/map_common.tscn" id="2_m15a0"]
 [ext_resource type="PackedScene" uid="uid://dh8k1b5ujtgp7" path="res://assets/characters/palyer/player.tscn" id="3_2uee5"]
 [ext_resource type="PackedScene" uid="uid://crgatbgndwyo6" path="res://assets/characters/enemy/enemy.tscn" id="4_pej3v"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1nqa"]
-size = Vector2(23, 24)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbrpk"]
 size = Vector2(40, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2n7sn"]
-size = Vector2(54, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahosb"]
 size = Vector2(20, 146)
@@ -24,50 +18,45 @@ size = Vector2(252, 11.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2avm"]
 size = Vector2(248, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxkq1"]
+size = Vector2(46, 14.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru0na"]
+size = Vector2(46, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ege6u"]
+size = Vector2(15, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ectef"]
+size = Vector2(15, 46)
+
 [node name="Map_1" type="Node2D"]
-script = ExtResource("1_plsrx")
+script = ExtResource("1_mc45e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.225, 0.225)
-texture = ExtResource("1_f2jw7")
+position = Vector2(3.49999, 3.5)
+scale = Vector2(0.27691, 0.263889)
+texture = ExtResource("2_ht5r3")
 
 [node name="MapCommon" parent="." instance=ExtResource("2_m15a0")]
 
 [node name="Player" parent="." instance=ExtResource("3_2uee5")]
-position = Vector2(-73, -28)
+position = Vector2(1, 56)
 collision_mask = 524289
 
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("4_pej3v")]
-position = Vector2(67, 35)
+position = Vector2(-52, 12)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("4_pej3v")]
-position = Vector2(62, -26)
-
-[node name="Door_Right" type="Area2D" parent="." groups=["Door"]]
-
-[node name="DoorRight" type="CollisionShape2D" parent="Door_Right"]
-position = Vector2(121, 3)
-shape = SubResource("RectangleShape2D_k1nqa")
-
-[node name="Door_Left" type="Area2D" parent="."]
-
-[node name="DoorLeft" type="CollisionShape2D" parent="Door_Left"]
-position = Vector2(-121, 4)
-shape = SubResource("RectangleShape2D_k1nqa")
+position = Vector2(53, 12)
 
 [node name="Door_Up" type="Area2D" parent="."]
 
 [node name="DoorUp" type="CollisionShape2D" parent="Door_Up"]
 position = Vector2(0, -53)
 shape = SubResource("RectangleShape2D_cbrpk")
-
-[node name="Door_Down" type="Area2D" parent="."]
-
-[node name="DoorDown" type="CollisionShape2D" parent="Door_Down"]
-position = Vector2(0, 71)
-shape = SubResource("RectangleShape2D_2n7sn")
 
 [node name="Walls" type="CharacterBody2D" parent="."]
 
@@ -87,4 +76,38 @@ shape = SubResource("RectangleShape2D_lcygg")
 position = Vector2(7, -58)
 shape = SubResource("RectangleShape2D_o2avm")
 
-[connection signal="body_entered" from="Door_Right" to="." method="_on_door_right_body_entered"]
+[node name="Holes" type="CharacterBody2D" parent="."]
+
+[node name="Hole1Up" type="CollisionShape2D" parent="Holes"]
+position = Vector2(-52, -3.625)
+shape = SubResource("RectangleShape2D_rxkq1")
+
+[node name="Hole1Down" type="CollisionShape2D" parent="Holes"]
+position = Vector2(-52, 27.5)
+shape = SubResource("RectangleShape2D_ru0na")
+
+[node name="Hole1Left" type="CollisionShape2D" parent="Holes"]
+position = Vector2(-67.5, 12)
+shape = SubResource("RectangleShape2D_ege6u")
+
+[node name="Hole1Right" type="CollisionShape2D" parent="Holes"]
+position = Vector2(-36.5, 12)
+shape = SubResource("RectangleShape2D_ectef")
+
+[node name="Hole2Up" type="CollisionShape2D" parent="Holes"]
+position = Vector2(53, -3.625)
+shape = SubResource("RectangleShape2D_rxkq1")
+
+[node name="Hole2Down" type="CollisionShape2D" parent="Holes"]
+position = Vector2(53, 27.5)
+shape = SubResource("RectangleShape2D_ru0na")
+
+[node name="Hole2Right" type="CollisionShape2D" parent="Holes"]
+position = Vector2(68.5, 12)
+shape = SubResource("RectangleShape2D_ectef")
+
+[node name="Hole2Left" type="CollisionShape2D" parent="Holes"]
+position = Vector2(37.5, 12)
+shape = SubResource("RectangleShape2D_ege6u")
+
+[connection signal="body_entered" from="Door_Up" to="." method="_on_door_up_body_entered"]
