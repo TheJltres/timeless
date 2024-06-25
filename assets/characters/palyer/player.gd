@@ -7,7 +7,7 @@ const DECELERATION = 20
 var USING_CONTROLLER = false
 var CAN_SHOOT = true
 
-@export var scene_bullet: PackedScene
+const scene_bullet = preload("res://assets/bullets/bullet.tscn")
 
 @onready var marker_aim: Node2D = $MarkerAim
 @onready var marker_2d = $MarkerAim/Marker2D
