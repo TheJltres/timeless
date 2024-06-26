@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs5me1l7gdr8h"]
+[gd_scene load_steps=11 format=3 uid="uid://bs5me1l7gdr8h"]
 
 [ext_resource type="Texture2D" uid="uid://cof0jhibfg3vb" path="res://assets/maps/map5.jpg" id="1_xahev"]
+[ext_resource type="Script" path="res://scenes/maps/map_5.gd" id="1_xcdo4"]
 [ext_resource type="PackedScene" uid="uid://dlgdypsbphnnm" path="res://scenes/maps/map_common.tscn" id="2_bj6t0"]
 [ext_resource type="PackedScene" uid="uid://dh8k1b5ujtgp7" path="res://assets/characters/palyer/player.tscn" id="3_skwqi"]
 [ext_resource type="PackedScene" uid="uid://crgatbgndwyo6" path="res://assets/characters/enemy/enemy.tscn" id="4_u6b6a"]
@@ -18,9 +19,10 @@ size = Vector2(248, 20)
 size = Vector2(22, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp6ok"]
-size = Vector2(54, 14)
+size = Vector2(54, 15)
 
-[node name="Map5" type="Node2D"]
+[node name="Map_5" type="Node2D"]
+script = ExtResource("1_xcdo4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.20537e-05, -3.45707e-06)
@@ -30,7 +32,7 @@ texture = ExtResource("1_xahev")
 [node name="MapCommon" parent="." instance=ExtResource("2_bj6t0")]
 
 [node name="Player" parent="." instance=ExtResource("3_skwqi")]
-position = Vector2(0, 56)
+position = Vector2(0, 51)
 collision_mask = 524289
 
 [node name="Enemies" type="Node" parent="."]
@@ -62,7 +64,7 @@ shape = SubResource("RectangleShape2D_54d4s")
 position = Vector2(7, -58)
 shape = SubResource("RectangleShape2D_t34on")
 
-[node name="Door_Right" type="Area2D" parent="." groups=["Door"]]
+[node name="Door_Right" type="Area2D" parent="."]
 
 [node name="DoorRight" type="CollisionShape2D" parent="Door_Right"]
 position = Vector2(121, 4)
@@ -77,5 +79,9 @@ shape = SubResource("RectangleShape2D_bd6ai")
 [node name="Door_Down" type="Area2D" parent="."]
 
 [node name="DoorDown" type="CollisionShape2D" parent="Door_Down"]
-position = Vector2(0, 71)
+position = Vector2(0, 70.5)
 shape = SubResource("RectangleShape2D_dp6ok")
+
+[connection signal="body_entered" from="Door_Right" to="." method="_on_door_right_body_entered"]
+[connection signal="body_entered" from="Door_Left" to="." method="_on_door_left_body_entered"]
+[connection signal="body_entered" from="Door_Down" to="." method="_on_door_down_body_entered"]

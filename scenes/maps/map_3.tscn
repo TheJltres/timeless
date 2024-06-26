@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dh8k1b5ujtgp7" path="res://assets/characters/palyer/player.tscn" id="4_xydpx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbwj7"]
-size = Vector2(20, 22)
+size = Vector2(29, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbrpk"]
-size = Vector2(30, 21)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0nm4"]
+size = Vector2(20, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahosb"]
 size = Vector2(20, 146)
@@ -31,20 +31,20 @@ texture = ExtResource("2_pd44i")
 [node name="MapCommon" parent="." instance=ExtResource("3_neek5")]
 
 [node name="Player" parent="." instance=ExtResource("4_xydpx")]
-position = Vector2(-92, 9)
+position = Vector2(-98, 12)
 collision_mask = 524289
-
-[node name="Door_Left" type="Area2D" parent="."]
-
-[node name="DoorLeft" type="CollisionShape2D" parent="Door_Left"]
-position = Vector2(-118, 9)
-shape = SubResource("RectangleShape2D_qbwj7")
 
 [node name="Door_Up" type="Area2D" parent="."]
 
 [node name="DoorUp" type="CollisionShape2D" parent="Door_Up"]
-position = Vector2(-4, -53)
-shape = SubResource("RectangleShape2D_cbrpk")
+position = Vector2(2, -52)
+shape = SubResource("RectangleShape2D_qbwj7")
+
+[node name="Door_Left" type="Area2D" parent="."]
+
+[node name="DoorLeft" type="CollisionShape2D" parent="Door_Left"]
+position = Vector2(-120, 12)
+shape = SubResource("RectangleShape2D_l0nm4")
 
 [node name="Walls" type="CharacterBody2D" parent="."]
 
@@ -66,6 +66,5 @@ shape = SubResource("RectangleShape2D_o2avm")
 
 [node name="Enemies" type="Node" parent="."]
 
-[connection signal="body_entered" from="Door_Left" to="." method="_on_door_left_body_entered"]
-[connection signal="body_entered" from="Door_Up" to="." method="_on_door_right_body_entered"]
 [connection signal="body_entered" from="Door_Up" to="." method="_on_door_up_body_entered"]
+[connection signal="body_entered" from="Door_Left" to="." method="_on_door_left_body_entered"]
