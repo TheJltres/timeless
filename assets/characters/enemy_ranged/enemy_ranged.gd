@@ -6,10 +6,10 @@ const MAX_LIVE: int = 100
 const SPEED = 300.0
 
 func _physics_process(delta):
-	pass
+    pass
 
 func take_damage(amount: int):
-	self.live -= amount
-	
-	if self.live <= 0:
-		self.queue_free()
+    self.live -= amount
+    
+    if self.live <= 0:
+        self.queue_free()

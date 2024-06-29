@@ -1,38 +1,38 @@
-[gd_scene load_steps=13 format=3 uid="uid://crgatbgndwyo6"]
+[gd_scene load_steps=13 format=3 uid="uid://dl73qe0tvoaq1"]
 
-[ext_resource type="Texture2D" uid="uid://b8bwg6khjl5uh" path="res://assets/characters/enemy/enemy.png" id="1_d48np"]
-[ext_resource type="Script" path="res://assets/characters/enemy/enemy.gd" id="1_gbcbv"]
+[ext_resource type="Script" path="res://assets/characters/enemy_melee/enemy_melee.gd" id="1_dgq2r"]
+[ext_resource type="Texture2D" uid="uid://b8bwg6khjl5uh" path="res://assets/characters/enemy_melee/enemy_melee.png" id="2_rgv2r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8g2w3"]
-atlas = ExtResource("1_d48np")
+atlas = ExtResource("2_rgv2r")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itxg4"]
-atlas = ExtResource("1_d48np")
+atlas = ExtResource("2_rgv2r")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xldo7"]
-atlas = ExtResource("1_d48np")
+atlas = ExtResource("2_rgv2r")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pt651"]
-atlas = ExtResource("1_d48np")
+atlas = ExtResource("2_rgv2r")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hfypv"]
-atlas = ExtResource("1_d48np")
+atlas = ExtResource("2_rgv2r")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q73gv"]
-atlas = ExtResource("1_d48np")
+atlas = ExtResource("2_rgv2r")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxqo7"]
-atlas = ExtResource("1_d48np")
+atlas = ExtResource("2_rgv2r")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0n05f"]
-atlas = ExtResource("1_d48np")
+atlas = ExtResource("2_rgv2r")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vfrud"]
@@ -92,7 +92,7 @@ size = Vector2(16, 16)
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 524289
-script = ExtResource("1_gbcbv")
+script = ExtResource("1_dgq2r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vfrud")
