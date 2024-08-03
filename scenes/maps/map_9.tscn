@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://cfd3vh6rn6edx"]
 
 [ext_resource type="Script" path="res://scenes/maps/map_9.gd" id="1_au4wq"]
-[ext_resource type="Texture2D" uid="uid://glsrbl53lk3v" path="res://assets/maps/map9_ph.jpg" id="2_kjv4c"]
+[ext_resource type="Texture2D" uid="uid://bdhqgpob1tyex" path="res://assets/maps/map9.jpg" id="2_pieim"]
 [ext_resource type="PackedScene" uid="uid://dlgdypsbphnnm" path="res://scenes/maps/map_common.tscn" id="3_sbc8r"]
-[ext_resource type="PackedScene" uid="uid://dh8k1b5ujtgp7" path="res://assets/characters/palyer/player.tscn" id="4_bay0v"]
+[ext_resource type="PackedScene" uid="uid://dh8k1b5ujtgp7" path="res://assets/characters/player/player.tscn" id="4_bay0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpuyf"]
 size = Vector2(20, 146)
@@ -18,13 +18,13 @@ size = Vector2(248, 20)
 size = Vector2(22, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8lewt"]
-size = Vector2(106, 55)
+size = Vector2(102, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn1ba"]
-size = Vector2(110, 26)
+size = Vector2(116, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3j4q"]
-size = Vector2(34, 128)
+size = Vector2(22, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2omhs"]
 size = Vector2(32, 53)
@@ -33,19 +33,19 @@ size = Vector2(32, 53)
 size = Vector2(62, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wensx"]
-size = Vector2(33, 47)
+size = Vector2(33, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oe20f"]
-size = Vector2(36, 24)
+size = Vector2(36, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e40o"]
-size = Vector2(10, 28)
+size = Vector2(12, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2p2fi"]
 size = Vector2(114, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_myp05"]
-size = Vector2(48, 18)
+size = Vector2(54, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp6ok"]
 size = Vector2(38, 15)
@@ -55,8 +55,8 @@ script = ExtResource("1_au4wq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.81198e-05, 1.4782e-05)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_kjv4c")
+scale = Vector2(0.149976, 0.150046)
+texture = ExtResource("2_pieim")
 
 [node name="MapCommon" parent="." instance=ExtResource("3_sbc8r")]
 
@@ -93,19 +93,19 @@ shape = SubResource("RectangleShape2D_bd6ai")
 [node name="Holes" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Holes"]
-position = Vector2(66, 44.5)
+position = Vector2(68, 46)
 shape = SubResource("RectangleShape2D_8lewt")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Holes"]
-position = Vector2(-42, 60)
+position = Vector2(-39, 64)
 shape = SubResource("RectangleShape2D_bn1ba")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Holes"]
-position = Vector2(-103, 9)
+position = Vector2(-109, 9)
 shape = SubResource("RectangleShape2D_t3j4q")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Holes"]
-position = Vector2(-75, -28.5)
+position = Vector2(-82, -26)
 shape = SubResource("RectangleShape2D_2omhs")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Holes"]
@@ -113,23 +113,23 @@ position = Vector2(-37, 22.5)
 shape = SubResource("RectangleShape2D_hv7ud")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Holes"]
-position = Vector2(-22.5, -3.5)
+position = Vector2(-22.5, -4.5)
 shape = SubResource("RectangleShape2D_wensx")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Holes"]
-position = Vector2(1, -15)
+position = Vector2(1, -14)
 shape = SubResource("RectangleShape2D_oe20f")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Holes"]
-position = Vector2(44, 5)
+position = Vector2(50, 3.5)
 shape = SubResource("RectangleShape2D_0e40o")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Holes"]
-position = Vector2(63, -43.5)
+position = Vector2(77, -53)
 shape = SubResource("RectangleShape2D_2p2fi")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Holes"]
-position = Vector2(92, -23)
+position = Vector2(107, -26)
 shape = SubResource("RectangleShape2D_myp05")
 
 [node name="Door_Up" type="Area2D" parent="."]

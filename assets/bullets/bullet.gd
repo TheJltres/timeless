@@ -4,9 +4,9 @@ const SPEED = 300.0
 var direction: Vector2
 
 func _physics_process(delta):
-    self.position += self.direction * self.SPEED * delta
+	self.position += self.direction * self.SPEED * delta
 
 func _on_body_entered(body):
-    if body.is_in_group("Enemy"):
-        self.queue_free()
-        body.take_damage(50)
+	if body.is_in_group("Enemy"):
+		self.queue_free()
+		body.take_damage(50)

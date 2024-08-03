@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfwvryrhw4yml"
-path="res://.godot/imported/player.png-61d99830002a4f63fedd4ca7717549c1.ctex"
+uid="uid://bdhqgpob1tyex"
+path="res://.godot/imported/map9.jpg-4f091db7626619c65998fe4e052a1d6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/palyer/animations/player.png"
-dest_files=["res://.godot/imported/player.png-61d99830002a4f63fedd4ca7717549c1.ctex"]
+source_file="res://assets/maps/map9.jpg"
+dest_files=["res://.godot/imported/map9.jpg-4f091db7626619c65998fe4e052a1d6b.ctex"]
 
 [params]
 

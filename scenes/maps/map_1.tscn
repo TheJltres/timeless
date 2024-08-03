@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/maps/map_1.gd" id="1_mc45e"]
 [ext_resource type="Texture2D" uid="uid://cgkfp5d3av7an" path="res://assets/maps/map1.jpg" id="2_7eecb"]
 [ext_resource type="PackedScene" uid="uid://dlgdypsbphnnm" path="res://scenes/maps/map_common.tscn" id="2_m15a0"]
-[ext_resource type="PackedScene" uid="uid://dh8k1b5ujtgp7" path="res://assets/characters/palyer/player.tscn" id="3_2uee5"]
+[ext_resource type="PackedScene" uid="uid://dh8k1b5ujtgp7" path="res://assets/characters/player/player.tscn" id="3_2uee5"]
 [ext_resource type="PackedScene" uid="uid://crgatbgndwyo6" path="res://assets/characters/enemy_melee/enemy_melee.tscn" id="4_pej3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbrpk"]

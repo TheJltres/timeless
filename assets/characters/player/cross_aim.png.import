@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds16ovrs2tf30"
-path="res://.godot/imported/map10_ph.jpg-8582a15bb49f645715a9d144c782ad83.ctex"
+uid="uid://bm0d3awh0oihi"
+path="res://.godot/imported/cross_aim.png-75719ac820d57116dcafefb459f26e1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/maps/map10_ph.jpg"
-dest_files=["res://.godot/imported/map10_ph.jpg-8582a15bb49f645715a9d144c782ad83.ctex"]
+source_file="res://assets/characters/player/cross_aim.png"
+dest_files=["res://.godot/imported/cross_aim.png-75719ac820d57116dcafefb459f26e1e.ctex"]
 
 [params]
 
