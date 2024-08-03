@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://glsrbl53lk3v" path="res://assets/maps/map9_ph.jpg" id="2_kjv4c"]
 [ext_resource type="PackedScene" uid="uid://dlgdypsbphnnm" path="res://scenes/maps/map_common.tscn" id="3_sbc8r"]
 [ext_resource type="PackedScene" uid="uid://dh8k1b5ujtgp7" path="res://assets/characters/palyer/player.tscn" id="4_bay0v"]
-[ext_resource type="PackedScene" uid="uid://crgatbgndwyo6" path="res://assets/characters/enemy_melee/enemy_melee.tscn" id="5_hcc52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpuyf"]
 size = Vector2(20, 146)
