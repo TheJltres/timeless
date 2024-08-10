@@ -10,18 +10,18 @@ var flag_touched = false
 @onready var area_2d = $Area2D
 @onready var timer = $Timer
 
-func _physics_process(delta):
-	self.rotation = self.PLAYER.position.angle_to_point(self.position)
-	var direction = self.PLAYER.position.direction_to(self.position)
-	if flag_touched:
-		direction = -direction
-		self.velocity.x = -move_toward(self.velocity.x, direction.x * self.SPEED, self.ACCELERATION * 3)
-		self.velocity.y = -move_toward(self.velocity.y, direction.y * self.SPEED, self.ACCELERATION * 3)
-	else:
-		self.velocity.x = -move_toward(self.velocity.x, direction.x * self.SPEED, self.ACCELERATION)
-		self.velocity.y = -move_toward(self.velocity.y, direction.y * self.SPEED, self.ACCELERATION)
+func _physics_process(_delta):
+    self.rotation = self.PLAYER.position.angle_to_point(self.position)
+    var direction = self.PLAYER.position.direction_to(self.position)
+    if flag_touched:
+        direction = -direction
+        self.velocity.x = -move_toward(self.velocity.x, direction.x * self.SPEED, self.ACCELERATION * 3)
+        self.velocity.y = -move_toward(self.velocity.y, direction.y * self.SPEED, self.ACCELERATION * 3)
+    else:
+        self.velocity.x = -move_toward(self.velocity.x, direction.x * self.SPEED, self.ACCELERATION)
+        self.velocity.y = -move_toward(self.velocity.y, direction.y * self.SPEED, self.ACCELERATION)
 
-	self.move_and_slide()
+    self.move_and_slide()
 
 func take_damage(amount: int):
 	self.live -= amount

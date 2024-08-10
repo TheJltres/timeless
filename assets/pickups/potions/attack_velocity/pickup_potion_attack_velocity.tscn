@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4y7arj0nw32s"]
+
+[ext_resource type="Texture2D" uid="uid://bvythpf3abv1l" path="res://assets/pickups/potions/attack_velocity/pickup_potion_attack_velocity.png" id="1_b4ium"]
+[ext_resource type="Script" path="res://assets/pickups/potions/attack_velocity/pickup_potion_attack_velocity.gd" id="1_l0kb0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyl50"]
+size = Vector2(93, 95)
+
+[node name="PickupPotionAttackVelocity" type="Area2D"]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_l0kb0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b4ium")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_iyl50")

@@ -1,9 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddbld5y03pvsi"]
+[gd_scene load_steps=18 format=3 uid="uid://ddbld5y03pvsi"]
 
 [ext_resource type="Script" path="res://scenes/maps/map_3.gd" id="1_h8y7y"]
 [ext_resource type="Texture2D" uid="uid://r7mtq3b4bfke" path="res://assets/maps/map3.jpg" id="2_qkbgq"]
 [ext_resource type="PackedScene" uid="uid://dlgdypsbphnnm" path="res://scenes/maps/map_common.tscn" id="3_neek5"]
-[ext_resource type="PackedScene" uid="uid://dh8k1b5ujtgp7" path="res://assets/characters/player/player.tscn" id="4_xydpx"]
+[ext_resource type="PackedScene" uid="uid://dh8k1b5ujtgp7" path="res://assets/characters/palyer/player.tscn" id="4_xydpx"]
+[ext_resource type="PackedScene" uid="uid://dyveqihukjmxk" path="res://assets/pickups/potions/velocity/pickup_potion_velocity.tscn" id="5_v70js"]
+[ext_resource type="PackedScene" uid="uid://ddwxa6eeu1do" path="res://assets/pickups/potions/damage/pickup_potion_damage.tscn" id="6_at12v"]
+[ext_resource type="PackedScene" uid="uid://b4y7arj0nw32s" path="res://assets/pickups/potions/attack_velocity/pickup_potion_attack_velocity.tscn" id="7_f5slh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbwj7"]
 size = Vector2(56, 5)
@@ -96,6 +99,17 @@ position = Vector2(-127, 46)
 shape = SubResource("RectangleShape2D_bawa2")
 
 [node name="Enemies" type="Node" parent="."]
+
+[node name="Pickable" type="Node" parent="."]
+
+[node name="PickupPotionVelocity" parent="Pickable" instance=ExtResource("5_v70js")]
+position = Vector2(-31, -3)
+
+[node name="PickupPotionDamage" parent="Pickable" instance=ExtResource("6_at12v")]
+position = Vector2(25, -13)
+
+[node name="PickupPotionAttackVelocity" parent="Pickable" instance=ExtResource("7_f5slh")]
+position = Vector2(5, 19)
 
 [connection signal="body_entered" from="Door_Up" to="." method="_on_door_up_body_entered"]
 [connection signal="body_entered" from="Door_Left" to="." method="_on_door_left_body_entered"]

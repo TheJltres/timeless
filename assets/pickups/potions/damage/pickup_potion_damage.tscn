@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddwxa6eeu1do"]
+
+[ext_resource type="Texture2D" uid="uid://cy4pdrn6ic8th" path="res://assets/pickups/potions/damage/pickup_potion_damage.png" id="1_kv63o"]
+[ext_resource type="Script" path="res://assets/pickups/potions/damage/pickup_potion_damage.gd" id="1_qdagp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyv2w"]
+size = Vector2(91, 91)
+
+[node name="PickupPotionDamage" type="Area2D"]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_qdagp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kv63o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_yyv2w")

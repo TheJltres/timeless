@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmh44jthvi0d"]
+[gd_scene load_steps=14 format=3 uid="uid://cmh44jthvi0d"]
 
 [ext_resource type="Script" path="res://scenes/maps/map_7.gd" id="1_x0xb8"]
 [ext_resource type="Texture2D" uid="uid://b0e83lb30682u" path="res://assets/maps/map7.jpg" id="2_jajgr"]
@@ -22,6 +22,15 @@ size = Vector2(275, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5t3u4"]
 size = Vector2(91, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n30rg"]
+size = Vector2(16.5, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxysy"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mokvh"]
+size = Vector2(14, 14)
 
 [node name="Map_7" type="Node2D"]
 script = ExtResource("1_x0xb8")
@@ -70,5 +79,25 @@ position = Vector2(-1.5, 75)
 shape = SubResource("RectangleShape2D_5t3u4")
 
 [node name="Enemies" type="Node" parent="."]
+
+[node name="Pickable" type="Node" parent="."]
+
+[node name="Speed" type="Area2D" parent="Pickable" groups=["Pickable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickable/Speed"]
+position = Vector2(-27.25, 11.75)
+shape = SubResource("RectangleShape2D_n30rg")
+
+[node name="Speed2" type="Area2D" parent="Pickable" groups=["Pickable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickable/Speed2"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_nxysy")
+
+[node name="ShootSpeed" type="Area2D" parent="Pickable" groups=["Pickable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickable/ShootSpeed"]
+position = Vector2(25, 12)
+shape = SubResource("RectangleShape2D_mokvh")
 
 [connection signal="body_entered" from="Door_Down" to="." method="_on_door_down_body_entered"]
